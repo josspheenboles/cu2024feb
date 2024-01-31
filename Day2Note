@@ -9,3 +9,7 @@ alter user username superuser;
 =================db migrations=================
 python manage.py makemigrations
 python manage.py migrate
+======shell==========
+python manage.py shell
+===admin panel====
+python manage.py createsuperuser
