@@ -1,6 +1,8 @@
 from django.urls import path
 from . import  views
 urlpatterns=[
-    path('List',views.traineelist),
+    path('List',views.traineelist,name="trainee.list"),
+    path('add',views.traineeadd,name="trainee.add"),
     path('<int:id>',views.traineedetails,name="trainee.details"),
+    path('Update/<int:id>',views.traineeupdate,name="trainee.update"),
 ]

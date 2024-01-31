@@ -8,15 +8,18 @@ Trainee after template inhr.
     <tr>
         <td>id</td>
         <td>name</td>
+        <td>email</td>
         <td>actions</td>
     </tr>
     {%for trainee in trainess%}
      <tr>
         <td>{{trainee.id}}</td>
+        <td>{{trainee.name}}</td>
         <td>{{trainee.email}}</td>
         <td>
             <a href="{%url 'trainee.details' trainee.id%}">details</a>
-            <a href="">update</a>
+            <a href="{%url 'trainee.update' trainee.id%}">Update</a>
+
             <a href="">delete</a>
         </td>
     </tr>

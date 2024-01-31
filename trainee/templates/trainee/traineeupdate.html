@@ -1,0 +1,15 @@
+{%extends 'track/Base.html'%}
+{%block mytitle%}
+Trainee Update
+{%endblock%}
+{%block content%}
+<h1>Trainee Update</h1>
+<form method="post" >
+    {%csrf_token%}
+    <label>Name:</label>
+    <input type="text" name="name" value="{{trainee.name}}"></br>
+    <label>Email:</label>
+    <input type="text" name="email" value="{{trainee.email}}"></br>
+    <input type="submit" value="Update">
+</form>
+{%endblock%}
