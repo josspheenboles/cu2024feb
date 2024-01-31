@@ -5,3 +5,7 @@ pip freeze
 ===============create postgres user for you website ==============
 create user username with password 'pass';
 alter user username superuser;
+
+=================db migrations=================
+python manage.py makemigrations
+python manage.py migrate
