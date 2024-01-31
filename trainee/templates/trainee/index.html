@@ -4,4 +4,23 @@ Trainee after template inhr.
 {%endblock%}
 {%block content%}
 <h1>Trainee</h1>
+<table class="table table-strpid" border="1">
+    <tr>
+        <td>id</td>
+        <td>name</td>
+        <td>actions</td>
+    </tr>
+    {%for trainee in trainess%}
+     <tr>
+        <td>{{trainee.id}}</td>
+        <td>{{trainee.email}}</td>
+        <td>
+            <a href="{%url 'trainee.details' trainee.id%}">details</a>
+            <a href="">update</a>
+            <a href="">delete</a>
+        </td>
+    </tr>
+    {%endfor%}
+
+</table>
 {%endblock%}
