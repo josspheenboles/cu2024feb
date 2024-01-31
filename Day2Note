@@ -1,0 +1,3 @@
+install postgres connector
+pip install psycopg2
+pip freeze
