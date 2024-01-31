@@ -21,3 +21,13 @@ def traineeupdate(request,id):
     trainee = Trainee.objects.get(id=id)
     context['trainee']=trainee
     return render(request, 'trainee/traineeupdate.html', context)
+def traineeadd(request):
+    context = {}
+    if(request.method=='POST'):
+        trainee = Trainee()
+        trainee.name=request.POST['name']
+        trainee.email=request.POST['email']
+        trainee.save()
+        return HttpResponseRedirect(reverse('trainee.list'))
+
+    return render(request, 'trainee/traineeadd.html')
