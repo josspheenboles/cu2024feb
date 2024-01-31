@@ -1,3 +1,7 @@
 install postgres connector
 pip install psycopg2
 pip freeze
+
+===============create postgres user for you website ==============
+create user username with password 'pass';
+alter user username superuser;
