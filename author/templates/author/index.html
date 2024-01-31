@@ -1,0 +1,34 @@
+{%load static%}
+<head>
+    <title>Author</title>
+    <link rel="stylesheet" href="{%static 'author/css/style.css'%}" type="text/css"/>
+   <link rel="stylesheet" href="{%static 'bootstrap/dist/css/bootstrap.min.css'%}" type="text/css"/>
+
+</head>
+<div class="container">
+<h1>Hi author app</h1>
+<table class="table table-striped"  border="1">
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Image</td>
+        <td>actions</td>
+    </tr>
+    {%for author in authors%}
+        <tr>
+            <td>{{author.id}}</td>
+            <td>{{author.name}}</td>
+            <td>
+                <img src="{%static 'author/images/'|add:author.path%}" width="20%" height="20%">
+            </td>
+            <td>
+                <a href="">update</a>
+                <a href="">delete</a>
+                <a href="{%url 'author.id' author.id%}">show all data</a>
+            </td>
+        </tr>
+    {%endfor%}
+
+</table>
+    </div>
+<scrip src="{%static 'bootstrap/js/src/index.js'%}"/>
