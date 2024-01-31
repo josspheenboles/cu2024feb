@@ -10,6 +10,10 @@ def traineedetails(request,id):
     trainee = Trainee.objects.get(id=id)
     context = {'trainee': trainee}
     return render(request, 'trainee/traineedetails.html', context)
+def traineeDelete(request,id):
+    trainee = Trainee.objects.get(id=id).delete()
+
+    return HttpResponseRedirect(reverse('trainee.list'))
 def traineeupdate(request,id):
     context = {}
     if(request.method=='POST'):

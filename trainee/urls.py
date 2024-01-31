@@ -5,4 +5,5 @@ urlpatterns=[
     path('add',views.traineeadd,name="trainee.add"),
     path('<int:id>',views.traineedetails,name="trainee.details"),
     path('Update/<int:id>',views.traineeupdate,name="trainee.update"),
+    path('Delete/<int:id>',views.traineeDelete,name="trainee.Delete"),
 ]
