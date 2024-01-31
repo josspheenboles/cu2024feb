@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {%block mytitle%}
+            Parent page
+        {%endblock%}
+
+    </title>
+</head>
+<body>
+    <table border="1" width="100%">
+        <tr>
+            <td colspan="9">
+                <a href="">Trainee List</a>
+                <a href="">Track List</a>
+                <a href="">About us</a>
+                <a href="">Login</a>
+                <a href="">Register</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                {%blocke content%}
+                    put child content
+                {%endblock%}
+
+            </td>
+
+        </tr>
+        <tr>
+            <td colspan="9">
+                <cente>Copy Rigth Cairo University 2024</cente>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
