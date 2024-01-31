@@ -1,11 +1,11 @@
-
+{%load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Tracks List</title>
-    <link rel="stylesheet" href="{%static 'css/style.css'%}" type="text/css"/>
- <link rel="stylesheet" href="{%static 'bootstrap/dist/css/bootstrap.min.css'%}" type="text/css"/>
+    <link rel="stylesheet" src="{% static 'css/style.css' %}"/>
+
 </head>
 
 <div class="container">
@@ -37,6 +37,6 @@
     {%endfor%}
 </table>
 </div>
-<scrip src="{%static 'bootstrap/js/src/index.js'%}"/>
+
 
 </html>
