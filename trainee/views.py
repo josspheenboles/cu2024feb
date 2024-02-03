@@ -24,10 +24,13 @@ def traineeupdate(request,id):
         trainee = Trainee.objects.get(id=id)
         trainee.name=request.POST['name']
         trainee.email=request.POST['email']
+        trainee.track=Track.objects.get(id=request.POST['track'])
         trainee.save()
         return HttpResponseRedirect(reverse('trainee.list'))
     trainee = Trainee.objects.get(id=id)
+    tracks = Track.get_all_tracks()
     context['trainee']=trainee
+    context['tracks']=tracks
     return render(request, 'trainee/traineeupdate.html', context)
 def traineeadd(request):
     context = {}

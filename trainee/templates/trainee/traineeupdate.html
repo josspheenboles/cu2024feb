@@ -5,11 +5,19 @@ Trainee Update
 {%block content%}
 <h1>Trainee Update</h1>
 <form method="post" >
+
     {%csrf_token%}
     <label>Name:</label>
     <input type="text" name="name" value="{{trainee.name}}"></br>
     <label>Email:</label>
     <input type="text" name="email" value="{{trainee.email}}"></br>
+    <select name="track">
+
+        {%for track in tracks%}
+
+        <option value="{{track.0}}">{{track.1}}</option>
+        {%endfor%}
+    </select>
     <input type="submit" value="Update">
 </form>
 {%endblock%}
