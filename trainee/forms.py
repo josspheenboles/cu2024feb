@@ -7,6 +7,8 @@ class TraineeForm(forms.Form):
     email = forms.EmailField()
     img = forms.ImageField()
     def clean_name(self):
-        obj=Trainee.objects.get(name=self.cleaned_data['name']).exsists()
+        print(self.cleaned_data)
+        obj=Trainee.objects.filter(name=self.cleaned_data['name']).exsists()
         if obj:
-            raise ValidationError("Name Must Be unique")
+           raise ValidationError("Name Must Be unique")
+        return True

@@ -45,12 +45,12 @@ def traineeaddForm(request):
     context = {'form':TraineeForm()}
     if(request.method=='POST'):
         form=TraineeForm(request,request.POST,request.FILES)
-        if(form.is_valid()):
-            trainee = Trainee()
-            trainee.name=request.POST['name']
-            trainee.email=request.POST['email']
-            trainee.img=request.FILES['img']
-            trainee.save()
-            return HttpResponseRedirect(reverse('trainee.list'))
+        # if(form.is_valid()):
+        trainee = Trainee()
+        trainee.name=request.POST['name']
+        trainee.email=request.POST['email']
+        trainee.img=request.FILES['img']
+        trainee.save()
+        return HttpResponseRedirect(reverse('trainee.list'))
 
     return render(request, 'trainee/traineeaddForm.html',context)

@@ -1,5 +1,6 @@
 from django.db import models
 from django.shortcuts import reverse
+from track.models import *
 # Create your models here.
 class Trainee(models.Model):
     name=models.CharField(max_length=10)
@@ -8,6 +9,7 @@ class Trainee(models.Model):
     img=models.ImageField(upload_to='trainee/images',blank=True,null=True)
     createdat=models.DateTimeField(auto_now_add=True)
     updatedat=models.DateTimeField(auto_now=True)
+    track=models.ForeignKey(Track,on_delete=models.CASCADE)
 
     def __str__(self):
         return  'Name:'+self.name+' email:'+self.email
