@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.shortcuts import reverse
 # Create your models here.
 class Trainee(models.Model):
     name=models.CharField(max_length=10)
@@ -19,3 +19,10 @@ class Trainee(models.Model):
     @classmethod
     def get_trainee_by_id(self,id):
         return self.objects.get(id=id)
+
+    def get_trainee_url(self,id):
+        return reverse('trainee.details',args=[id])
+
+    @classmethod
+    def get_trainee_img(self,id):
+        return 'media'+self.objects.get(id=id).img
