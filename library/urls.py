@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path,include
 from author import views
 from track import  views as track
+from .settings import *
+from django.conf.urls.static import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('Hello',views.hello),
@@ -27,7 +29,7 @@ urlpatterns = [
     path('Tracks/',include('track.urls')),
     path('Trainee/',include('trainee.urls'))
 
-]
+] + static (MEDIA_URL,document_root=MEDIA_ROOT)
 '''
     path('<authorname>',views.getauthorbyname),
     re_path(r'^Promot/(?P<salary>[-+]?\d*\.\d+|\d+)$', views.promotcalculation, name='promote_author'),
