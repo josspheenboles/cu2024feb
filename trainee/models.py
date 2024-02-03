@@ -23,6 +23,6 @@ class Trainee(models.Model):
     def get_trainee_url(self,id):
         return reverse('trainee.details',args=[id])
 
-    @classmethod
-    def get_trainee_img(self,id):
-        return 'media'+self.objects.get(id=id).img
+
+    def get_trainee_img(self):
+        return f'/media/{self.img}'
