@@ -51,4 +51,4 @@ def traineeaddForm(request):
         trainee.save()
         return HttpResponseRedirect(reverse('trainee.list'))
 
-    return render(request, 'trainee/traineeaddForm.html')
+    return render(request, 'trainee/traineeaddForm.html',context)
