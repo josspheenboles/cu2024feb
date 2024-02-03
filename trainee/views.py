@@ -1,6 +1,7 @@
 from django.shortcuts import render,reverse
 from django.http import HttpResponseRedirect
 from .models import *
+from .forms import *
 # Create your views here.
 def traineelist(request):
     #trainees=Trainee.objects.all()
@@ -39,3 +40,15 @@ def traineeadd(request):
         return HttpResponseRedirect(reverse('trainee.list'))
 
     return render(request, 'trainee/traineeadd.html')
+
+def traineeaddForm(request):
+    context = {'form':TraineeForm()}
+    if(request.method=='POST'):
+        trainee = Trainee()
+        trainee.name=request.POST['name']
+        trainee.email=request.POST['email']
+        trainee.img=request.FILES['image']
+        trainee.save()
+        return HttpResponseRedirect(reverse('trainee.list'))
+
+    return render(request, 'trainee/traineeaddForm.html')
