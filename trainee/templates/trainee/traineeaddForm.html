@@ -6,6 +6,7 @@ Trainee Add
 <h1>Trainee Add Form</h1>
 <form method="post" enctype="multipart/form-data" >
     {%csrf_token%}
+    {{form.as_p}}
     <input type="submit" value="Add">
 </form>
 {%endblock%}
