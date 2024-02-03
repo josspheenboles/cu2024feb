@@ -9,7 +9,7 @@ class Trainee(models.Model):
     img=models.ImageField(upload_to='trainee/images',blank=True,null=True)
     createdat=models.DateTimeField(auto_now_add=True)
     updatedat=models.DateTimeField(auto_now=True)
-    track=models.ForeignKey(Track,on_delete=models.CASCADE)
+    track=models.ForeignKey(Track,on_delete=models.CASCADE,null=True,blank=True)
 
     def __str__(self):
         return  'Name:'+self.name+' email:'+self.email
