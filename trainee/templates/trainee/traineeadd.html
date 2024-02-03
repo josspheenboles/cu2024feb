@@ -4,12 +4,14 @@ Trainee Add
 {%endblock%}
 {%block content%}
 <h1>Trainee Add</h1>
-<form method="post" >
+<form method="post" enctype="multipart/form-data" >
     {%csrf_token%}
     <label>Name:</label>
     <input type="text" name="name" value=""></br>
     <label>Email:</label>
     <input type="text" name="email" value=""></br>
+    <label>Image:</label>
+    <input type="file" name="image" value=""></br>
     <input type="submit" value="Add">
 </form>
 {%endblock%}
