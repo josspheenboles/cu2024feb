@@ -44,6 +44,7 @@ def traineeadd(request):
 def traineeaddForm(request):
     context = {'form':TraineeForm()}
     if(request.method=='POST'):
+        form=TraineeForm(request,request.POST,request.FILES)
         trainee = Trainee()
         trainee.name=request.POST['name']
         trainee.email=request.POST['email']
