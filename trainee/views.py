@@ -36,6 +36,7 @@ def traineeadd(request):
         trainee.name=request.POST['name']
         trainee.email=request.POST['email']
         trainee.img=request.FILES['image']
+        trainee.track=Track.objects.get(id=request.POST['track'])
         trainee.save()
         return HttpResponseRedirect(reverse('trainee.list'))
 
@@ -46,11 +47,14 @@ def traineeaddForm(request):
     if(request.method=='POST'):
         form=TraineeForm(request,request.POST,request.FILES)
         # if(form.is_valid()):
-        trainee = Trainee()
-        trainee.name=request.POST['name']
-        trainee.email=request.POST['email']
-        trainee.img=request.FILES['img']
-        trainee.save()
+        # trainee = Trainee()
+        # trainee.name=request.POST['name']
+        # trainee.email=request.POST['email']
+        # trainee.img=request.FILES['img']
+        # print(request.POST['track'])
+        # trainee.track=Track.objects.get(name=request.POST['track'])
+        # trainee.save()
+        print(request.POST)
         return HttpResponseRedirect(reverse('trainee.list'))
 
     return render(request, 'trainee/traineeaddForm.html',context)
