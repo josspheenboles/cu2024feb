@@ -15,3 +15,7 @@ class Trainee(models.Model):
     @classmethod
     def get_all_trainees(cls):
         return cls.objects.all()
+
+    @classmethod
+    def get_trainee_by_id(self,id):
+        return self.objects.get(id=id)

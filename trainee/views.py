@@ -9,8 +9,9 @@ def traineelist(request):
     context={'trainess':Trainee.get_all_trainees()}
     return  render(request,'trainee/index.html',context)
 def traineedetails(request,id):
-    trainee = Trainee.objects.get(id=id)
-    context = {'trainee': trainee}
+    #trainee = Trainee.objects.get(id=id)
+    #context = {'trainee': trainee}
+    context = {'trainee': Trainee.get_trainee_by_id(id)}
     return render(request, 'trainee/traineedetails.html', context)
 def traineeDelete(request,id):
     trainee = Trainee.objects.get(id=id).delete()
