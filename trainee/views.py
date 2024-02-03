@@ -3,8 +3,10 @@ from django.http import HttpResponseRedirect
 from .models import *
 # Create your views here.
 def traineelist(request):
-    trainees=Trainee.objects.all()
-    context={'trainess':trainees}
+    #trainees=Trainee.objects.all()
+    #context={'trainess':trainees}
+    #more readable
+    context={'trainess':Trainee.get_all_trainees()}
     return  render(request,'trainee/index.html',context)
 def traineedetails(request,id):
     trainee = Trainee.objects.get(id=id)

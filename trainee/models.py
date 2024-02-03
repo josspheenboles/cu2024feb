@@ -11,3 +11,7 @@ class Trainee(models.Model):
 
     def __str__(self):
         return  'Name:'+self.name+' email:'+self.email
+
+    @classmethod
+    def get_all_trainees(cls):
+        return cls.objects.all()
