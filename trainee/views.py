@@ -31,6 +31,7 @@ def traineeadd(request):
         trainee = Trainee()
         trainee.name=request.POST['name']
         trainee.email=request.POST['email']
+        trainee.img=request.FILES['image']
         trainee.save()
         return HttpResponseRedirect(reverse('trainee.list'))
 
