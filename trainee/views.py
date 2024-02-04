@@ -62,3 +62,7 @@ def traineeaddForm(request):
         return HttpResponseRedirect(reverse('trainee.list'))
 
     return render(request, 'trainee/traineeaddForm.html',context)
+
+def traineeaddFormModel(request):
+    context={'form':Traineeaddmodel()}
+    return render(request,'trainee/traineeaddFormModel.html',context)
