@@ -14,3 +14,7 @@ class TraineeForm(forms.Form):
     #     if obj:
     #        raise ValidationError("Name Must Be unique")
     #     return True
+class Traineeaddmodel(forms.ModelForm):
+    class Meta:
+        model=Trainee
+        fileds='__all__'
