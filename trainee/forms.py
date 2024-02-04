@@ -17,4 +17,4 @@ class TraineeForm(forms.Form):
 class Traineeaddmodel(forms.ModelForm):
     class Meta:
         model=Trainee
-        fileds='__all__'
+        fields='__all__'
