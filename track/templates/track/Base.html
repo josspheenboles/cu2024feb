@@ -20,7 +20,8 @@
   {% csrf_token %}
   <button type="submit">Logout</button>
 </form>
-
+{%else%}
+<a href="{%url 'login'%}">login</a>
 {%endif%}
 
     <table border="1" width="100%">
