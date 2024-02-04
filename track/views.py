@@ -5,6 +5,13 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView,UpdateView,CreateView,DetailView,DeleteView
 from .models import *
 from .forms import *
+
+class TrackCreate(CreateView):
+    model = Track
+    template_name = 'track/update.html'
+    form_class = Trackform
+    success_url = reverse_lazy('track.list')
+
 class TrackList(ListView):
     model = Track
     context_object_name = 'tracks'
