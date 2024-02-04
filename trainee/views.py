@@ -65,4 +65,8 @@ def traineeaddForm(request):
 
 def traineeaddFormModel(request):
     context={'form':Traineeaddmodel()}
+    if(request.methos=='POST'):
+        form=Traineeaddmodel(request.POST,request.FILES)
+        if(form.is_valid()):
+            form.save()
     return render(request,'trainee/traineeaddFormModel.html',context)
