@@ -1,5 +1,6 @@
 from django import forms
 from .models import *
 class Trackform(forms.ModelForm):
-    model=Track
-    fields='__all__'
+    class Meta:
+        model=Track
+        fields='__all__'

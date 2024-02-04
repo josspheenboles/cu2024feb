@@ -1,0 +1,17 @@
+{%extends 'track/Base.html'%}
+{% load static %}
+{%block mytitle%}
+Tracks
+{%endblock%}
+
+{%block content%}
+<div class="container">
+<h1>Tracks Update</h1>
+<form method="post">
+    {%csrf_token%}
+    {{form}}
+    <input type="submit" value="Update">
+
+</form>
+</div>
+{%endblock%}

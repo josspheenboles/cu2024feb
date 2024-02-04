@@ -1,7 +1,10 @@
 from django.shortcuts import render
-from django.http import  HttpResponse
+from django.http import  HttpResponse,HttpResponseRedirect
+from django.shortcuts import reverse
+from django.urls import reverse_lazy
 from django.views.generic import ListView,UpdateView,CreateView,DetailView,DeleteView
 from .models import *
+from .forms import *
 class TrackList(ListView):
     model = Track
     context_object_name = 'tracks'
@@ -10,6 +13,12 @@ class TrackDetails(DetailView):
     model = Track
     context_object_name = 'track'
     template_name = 'track/details.html'
+class TrackUpdate(UpdateView):
+    model = Track
+    context_object_name = 'track'
+    form_class = Trackform
+    template_name = 'track/update.html'
+    success_url = reverse_lazy('track.list')
 # Create your views here.
 #httprequest,return httpresponse
 # tracks=[
