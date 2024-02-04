@@ -11,8 +11,11 @@ class traineeupdateClass(View):
         form=Traineeaddmodel( instance=trainee)
         context['form'] = form
         return render(request, 'trainee/traineeupdateclass.html', context)
-    def post(self):
-        pass
+    def post(self,request,id):
+        form = Traineeaddmodel(request.POST,request.FILES)
+        if(form.is_valid()):
+            trainee=form.save()
+            return HttpResponseRedirect(reverse('trainee.list'))
 
 def traineelist(request):
     #trainees=Trainee.objects.all()
