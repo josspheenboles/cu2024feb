@@ -5,8 +5,12 @@ from .forms import *
 # Create your views here.
 from django.views import View
 class traineeupdateClass(View):
-    def get(self):
-        pass
+    def get(self,request,id):
+        context={}
+        trainee = Trainee.objects.get(id=id)
+        form=Traineeaddmodel( instance=trainee)
+        context['form'] = form
+        return render(request, 'trainee/traineeupdateclass.html', context)
     def post(self):
         pass
 
