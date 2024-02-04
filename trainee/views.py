@@ -4,6 +4,7 @@ from .models import *
 from .forms import *
 # Create your views here.
 from django.views import View
+from django.contrib.auth.decorators import login_required
 class traineeupdateClass(View):
     def get(self,request,id):
         context={}
@@ -28,10 +29,12 @@ def traineedetails(request,id):
     #context = {'trainee': trainee}
     context = {'trainee': Trainee.get_trainee_by_id(id)}
     return render(request, 'trainee/traineedetails.html', context)
+@login_required()
 def traineeDelete(request,id):
     trainee = Trainee.objects.get(id=id).delete()
 
     return HttpResponseRedirect(reverse('trainee.list'))
+@login_required()
 def traineeupdate(request,id):
     context = {}
     if(request.method=='POST'):
@@ -46,6 +49,7 @@ def traineeupdate(request,id):
     context['trainee']=trainee
     context['tracks']=tracks
     return render(request, 'trainee/traineeupdate.html', context)
+@login_required()
 def traineeadd(request):
     context = {}
     if(request.method=='POST'):
@@ -60,6 +64,7 @@ def traineeadd(request):
 
     return render(request, 'trainee/traineeadd.html')
 
+@login_required()
 def traineeaddForm(request):
     context = {'form':TraineeForm()}
     if(request.method=='POST'):
@@ -77,6 +82,7 @@ def traineeaddForm(request):
 
     return render(request, 'trainee/traineeaddForm.html',context)
 
+@login_required()
 def traineeaddFormModel(request):
     context={'form':Traineeaddmodel()}
     if(request.method=='POST'):
