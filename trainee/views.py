@@ -65,8 +65,9 @@ def traineeaddForm(request):
 
 def traineeaddFormModel(request):
     context={'form':Traineeaddmodel()}
-    if(request.methos=='POST'):
+    if(request.method=='POST'):
         form=Traineeaddmodel(request.POST,request.FILES)
         if(form.is_valid()):
-            form.save()
+            traineeobj=form.save()
+            return HttpResponseRedirect(reverse('trainee.details',args=[traineeobj.id]))
     return render(request,'trainee/traineeaddFormModel.html',context)
