@@ -3,6 +3,13 @@ from django.http import HttpResponseRedirect
 from .models import *
 from .forms import *
 # Create your views here.
+from django.views import View
+class traineeupdateClass(View):
+    def get(self):
+        pass
+    def post(self):
+        pass
+
 def traineelist(request):
     #trainees=Trainee.objects.all()
     #context={'trainess':trainees}
