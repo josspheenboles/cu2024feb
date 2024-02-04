@@ -27,7 +27,8 @@ urlpatterns = [
     path('Book/',include('book.urls')),
     path('Hello',track.hellcu),
     path('Tracks/',include('track.urls')),
-    path('Trainee/',include('trainee.urls'))
+    path('Trainee/',include('trainee.urls')),
+    path('accounts/',include('django.contrib.auth.urls'))
 
 ] + static (MEDIA_URL,document_root=MEDIA_ROOT)
 '''
