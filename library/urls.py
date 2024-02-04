@@ -20,6 +20,7 @@ from author import views
 from track import  views as track
 from .settings import *
 from django.conf.urls.static import *
+from .views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('Hello',views.hello),
@@ -28,7 +29,8 @@ urlpatterns = [
     path('Hello',track.hellcu),
     path('Tracks/',include('track.urls')),
     path('Trainee/',include('trainee.urls')),
-    path('accounts/',include('django.contrib.auth.urls'))
+    path('accounts/',include('django.contrib.auth.urls')),
+    path('accounts/profile/',profile,name='account.profile')
 
 ] + static (MEDIA_URL,document_root=MEDIA_ROOT)
 '''
