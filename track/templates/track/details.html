@@ -1,0 +1,25 @@
+{%extends 'track/Base.html'%}
+{% load static %}
+{%block mytitle%}
+Tracks
+{%endblock%}
+
+{%block content%}
+<div class="container">
+<h1>Tracks List</h1>
+
+<table class="table table-striped"  border="1">
+
+    <tr>
+        <td>id</td>
+        <td>{{track.id}}</td>
+
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td>{{track.name}}</td>
+
+    </tr>
+</table>
+</div>
+{%endblock%}

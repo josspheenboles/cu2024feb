@@ -6,7 +6,10 @@ class TrackList(ListView):
     model = Track
     context_object_name = 'tracks'
     template_name = 'track/index.html'
-
+class TrackDetails(DetailView):
+    model = Track
+    context_object_name = 'track'
+    template_name = 'track/details.html'
 # Create your views here.
 #httprequest,return httpresponse
 # tracks=[
