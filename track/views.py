@@ -4,8 +4,8 @@ from django.views.generic import ListView,UpdateView,CreateView,DetailView,Delet
 from .models import *
 class TrackList(ListView):
     model = Track
-    template_name = 'track/index.html'
     context_object_name = 'tracks'
+    template_name = 'track/index.html'
 
 # Create your views here.
 #httprequest,return httpresponse

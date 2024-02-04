@@ -13,21 +13,17 @@ Tracks
     <tr>
         <td>id</td>
         <td>name</td>
-        <td>image</td>
         <td>Actions</td>
     </tr>
     {%for track in tracks%}
         <tr>
             <td>{{track.id}}</td>
-            <td>{{track.Name}}</td>
+            <td>{{track.name}}</td>
             <td>
 
 
             </td>
             <td>
-                <a href="/Tracks/{{track.id}}">show details</a>
-                <a href="{% url 'track.details' track.id%}">show details</a>
-                <img src="{% static 'track/images/'|add:track.path %}" width="5%"/>
 
             </td>
         </tr>
