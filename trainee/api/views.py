@@ -3,6 +3,7 @@ from django.http import JsonResponse
 from rest_framework.decorators import api_view
 from rest_framework.response import  Response
 from trainee.models import *
+from .serlizer import *
 def hell(request):
     return JsonResponse({"id":1,"name":"ali"})
 @api_view(['GET'])
@@ -21,5 +22,8 @@ def accept_data(request):
 def getall(request):
     trainees=Trainee.get_all_trainees()
     #serlizer manull
-    selizeddata={"id":trainees[0].id,"name":trainees[0].name}
+    selizeddata=[]
+    for trainee in trainees:
+        selizeddata.append(Traineeserlizer(trainee).data)
+
     return Response({"msg":"done","data":selizeddata})
