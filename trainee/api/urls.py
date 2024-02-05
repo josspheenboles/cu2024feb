@@ -7,4 +7,5 @@ urlpatterns=[
     path('all/',getall),
     path('add/',add),
     path('getbyid/<id>',getbyid),
+    path('deletebyid/<id>',deletebyid),
 ]

@@ -10,6 +10,13 @@ def getbyid(request,id):
     if(len(traineedata)>0):
         return Response(data={'data':Traineeserlizer(traineedata[0]).data   },status=200)
     return Response({'msg':'trainee not found'})
+@api_view(['DELETE'])
+def deletebyid(request,id):
+    traineedata=Trainee.objects.filter(id=id)
+    if(len(traineedata)>0):
+        traineedata.delete()
+        return Response(data={'msg':'deleted'})
+    return Response({'msg':'trainee not found'})
 
 def hell(request):
     return JsonResponse({"id":1,"name":"ali"})
