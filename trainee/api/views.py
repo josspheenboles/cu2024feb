@@ -20,4 +20,4 @@ def accept_data(request):
 @api_view(['GET'])
 def getall(request):
     trainees=Trainee.get_all_trainees()
-    return Response({"msg":"done"})
+    return Response({"msg":"done","data":trainees})
