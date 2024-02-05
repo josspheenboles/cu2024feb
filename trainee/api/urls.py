@@ -1,5 +1,6 @@
 from django.urls import path
 from .views import *
 urlpatterns=[
-    path('Hello/',hellapi),
+    path('Hello/',hell),
+    path('HelloAPI/',hellapi),
 ]
