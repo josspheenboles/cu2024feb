@@ -30,8 +30,9 @@ def getall(request):
 
 @api_view(['POST'])
 def add(request):
-    trainee=Trainee()
-    trainee.name=request.data['name']
-    trainee.createdat=request.data['createdat']
-    trainee.save()
+    # trainee=Trainee()
+    # trainee.name=request.data['name']
+    # trainee.createdat=request.data['createdat']
+    # trainee.save()
+    Trainee.objects.create(**request.data)
     return  Response({'msg':'trainee added'})
