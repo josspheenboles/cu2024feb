@@ -4,12 +4,14 @@ from rest_framework.decorators import api_view
 from rest_framework.response import  Response
 from trainee.models import *
 from .serlizer import *
+
+
 @api_view(['GET'])
 def getbyid(request,id):
     traineedata=Trainee.objects.filter(id=id)
     if(len(traineedata)>0):
         return Response(data={'data':Traineeserlizer(traineedata[0]).data   },status=200)
-    return Response({'msg':'trainee not found'})
+    return Response({'msg':'trainee not found'},status=200)
 @api_view(['DELETE'])
 def deletebyid(request,id):
     traineedata=Trainee.objects.filter(id=id)
@@ -17,6 +19,17 @@ def deletebyid(request,id):
         traineedata.delete()
         return Response(data={'msg':'deleted'})
     return Response({'msg':'trainee not found'})
+
+@api_view(['GET','PUT'])
+def updatebyid(request,id):
+    traineedata = Trainee.objects.filter(id=id).first()
+
+    if(traineedata):
+        serlizeddata=Traineeserlizer(instance=traineedata,data=request.data)
+        if serlizeddata.is_valid():
+            serlizeddata.save()
+            return Response(data=serlizeddata.data,status=200)
+    return Response(serlizeddata.errors,status=400)
 
 def hell(request):
     return JsonResponse({"id":1,"name":"ali"})

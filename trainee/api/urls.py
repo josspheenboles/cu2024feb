@@ -8,4 +8,5 @@ urlpatterns=[
     path('add/',add),
     path('getbyid/<id>',getbyid),
     path('deletebyid/<id>',deletebyid),
+    path('update/<id>',updatebyid),
 ]
