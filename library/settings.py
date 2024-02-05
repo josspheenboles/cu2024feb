@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'book.apps.BookConfig',
     'track.apps.TrackConfig',
     'trainee.apps.TraineeConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
