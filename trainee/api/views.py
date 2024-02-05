@@ -2,7 +2,7 @@ from django import views
 from django.http import JsonResponse
 from rest_framework.decorators import api_view
 from rest_framework.response import  Response
-
+from trainee.models import *
 def hell(request):
     return JsonResponse({"id":1,"name":"ali"})
 @api_view(['GET'])
@@ -16,3 +16,8 @@ def accept_data(request):
             {"data":request.data,"msg":"request recived"},
             status=200)
     return Response({"data":"get request received"})
+
+@api_view(['GET'])
+def getall(request):
+    trainees=Trainee.get_all_trainees()
+    return Response({"msg":"done"})
