@@ -5,4 +5,5 @@ urlpatterns=[
     path('HelloAPI/',hellapi),
     path('acceptdata/',accept_data),
     path('all/',getall),
+    path('add/',add),
 ]

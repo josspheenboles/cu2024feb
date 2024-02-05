@@ -27,3 +27,11 @@ def getall(request):
         selizeddata.append(Traineeserlizer(trainee).data)
 
     return Response({"msg":"done","data":selizeddata})
+
+@api_view(['POST'])
+def add(request):
+    trainee=Trainee()
+    trainee.name=request.data['name']
+    trainee.createdat=request.data['createdat']
+    trainee.save()
+    return  Response({'msg':'trainee added'})
