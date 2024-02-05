@@ -4,3 +4,4 @@ class Traineeserlizer(serializers.Serializer):
     name=serializers.CharField(max_length=50)
     img=serializers.ImageField()
     createdat=serializers.DateTimeField(read_only=True)
+
