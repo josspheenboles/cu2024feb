@@ -20,4 +20,6 @@ def accept_data(request):
 @api_view(['GET'])
 def getall(request):
     trainees=Trainee.get_all_trainees()
-    return Response({"msg":"done","data":trainees})
+    #serlizer manull
+    selizeddata={"id":trainees[0].id,"name":trainees[0].name}
+    return Response({"msg":"done","data":selizeddata})
