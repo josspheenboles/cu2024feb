@@ -32,7 +32,7 @@ urlpatterns = [
     path('accounts/',include('django.contrib.auth.urls')),
     path('accounts/profile/',profile,name='account.profile'),
     path('accounts/Registratoin/',Registratoin.as_view(),name='account.Registratoin'),
-    path('API/',include('trainee.api.urls'))
+    path('Trainee/API/',include('trainee.api.urls'))
 
 
 ] + static (MEDIA_URL,document_root=MEDIA_ROOT)
