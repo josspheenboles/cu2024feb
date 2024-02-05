@@ -4,6 +4,12 @@ from rest_framework.decorators import api_view
 from rest_framework.response import  Response
 from trainee.models import *
 from .serlizer import *
+@api_view(['GET'])
+def getbyid(request,id):
+    traineedata=Trainee.objects.filter(id=id)
+    if(len(traineedata)>0):
+        return Response(data={'data':Traineeserlizer(traineedata[0]).data   },status=200)
+    return Response({'msg':'trainee not found'})
 
 def hell(request):
     return JsonResponse({"id":1,"name":"ali"})

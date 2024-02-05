@@ -6,4 +6,5 @@ urlpatterns=[
     path('acceptdata/',accept_data),
     path('all/',getall),
     path('add/',add),
+    path('getbyid/<id>',getbyid),
 ]
