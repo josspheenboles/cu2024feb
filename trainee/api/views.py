@@ -4,6 +4,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import  Response
 from trainee.models import *
 from .serlizer import *
+
 def hell(request):
     return JsonResponse({"id":1,"name":"ali"})
 @api_view(['GET'])

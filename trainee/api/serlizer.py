@@ -1,7 +1,9 @@
 from rest_framework import serializers
+from rest_framework.validators import UniqueValidator
+from trainee.models import *
 class Traineeserlizer(serializers.Serializer):
     id=serializers.IntegerField(read_only=True)
-    name=serializers.CharField(max_length=50)
+    name=serializers.CharField(validators=[UniqueValidator(queryset=Trainee.objects.all())],max_length=50)
     img=serializers.ImageField()
     createdat=serializers.DateTimeField(read_only=True)
 
