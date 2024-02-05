@@ -1,1 +1,5 @@
 pip install djangorestframework
+JWT
+https://www.django-rest-framework.org/api-guide/authentication/
+classbased view & generic
+facebook app & google app
