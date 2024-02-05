@@ -22,11 +22,12 @@ def accept_data(request):
 def getall(request):
     trainees=Trainee.get_all_trainees()
     #serlizer manull
-    selizeddata=[]
-    for trainee in trainees:
-        selizeddata.append(Traineeserlizer(trainee).data)
+    # selizeddata=[]
+    # for trainee in trainees:
+    #     selizeddata.append(Traineeserlizer(trainee).data)
 
-    return Response({"msg":"done","data":selizeddata})
+    # return Response({"msg":"done","data":selizeddata})
+    return Response({"msg":"done","data":Traineeserlizer(trainees,many=True)})
 
 @api_view(['POST'])
 def add(request):
