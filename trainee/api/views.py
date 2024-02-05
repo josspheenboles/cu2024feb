@@ -12,7 +12,7 @@ def hellapi(request):
 @api_view(['GET',"POST"])
 def accept_data(request):
     if(request.method=='POST'):
-        return JsonResponse(
+        return Response(
             {"data":request.data,"msg":"request recived"},
             status=200)
-    return JsonResponse({"data":"get request received"})
+    return Response({"data":"get request received"})
